@@ -271,7 +271,7 @@
 
         .nav-title {
             font-family: "Rye", Georgia, serif;
-            font-size: 18px;
+            font-size: 35px;
             font-weight: 400;
             letter-spacing: -0.04em;
             text-align: center;
@@ -1756,6 +1756,255 @@
             .hero-copy {
                 font-size: 16px;
             }
+
+            @media (max-width: 720px) {
+
+                /* page breathing space */
+                .page {
+                    width: min(100% - 28px, 1180px);
+                }
+
+                .section {
+                    padding: 52px 0;
+                }
+
+                /* navbar */
+                .topbar {
+                    padding-top: 14px;
+                }
+
+                .nav {
+                    min-height: 72px;
+                    padding: 12px 14px;
+                    gap: 12px;
+                    border-radius: 30px;
+                }
+
+                .logo-row {
+                    gap: 8px;
+                }
+
+                .logo-holder {
+                    height: 46px;
+                    min-width: 56px;
+                    padding: 6px 8px;
+                }
+
+                .nav-title {
+                    font-size: 13px;
+                    max-width: 160px;
+                    padding: 0 8px;
+                }
+
+                .nav-links .cta-small {
+                    padding: 12px 16px;
+                }
+
+                /* hero */
+                .hero {
+                    padding: 56px 0 44px;
+                    gap: 34px;
+                }
+
+                .hero>div:first-child {
+                    padding: 0 4px;
+                }
+
+                .event-label {
+                    padding: 12px 18px;
+                    margin-bottom: 24px;
+                }
+
+                h1 {
+                    margin-bottom: 26px;
+                }
+
+                .hero-copy {
+                    font-size: 18px;
+                    line-height: 1.75;
+                    padding-right: 2px;
+                }
+
+                .hero-actions {
+                    margin-top: 30px;
+                    gap: 16px;
+                }
+
+                .hero-btn {
+                    min-height: 58px;
+                    padding: 16px 20px;
+                }
+
+                /* right hero card */
+                .hero-card {
+                    padding: 20px;
+                    border-radius: 32px;
+                }
+
+                .poster-window {
+                    padding: 18px;
+                    border-radius: 26px;
+                }
+
+                .hero-banner-wrap {
+                    margin-bottom: 22px;
+                }
+
+                .hero-banner-img {
+                    height: 130px;
+                }
+
+                .date-line {
+                    font-size: clamp(40px, 12vw, 56px);
+                    margin-bottom: 18px;
+                }
+
+                .detail-list {
+                    gap: 12px;
+                    margin-top: 18px;
+                }
+
+                .detail-pill {
+                    padding: 16px 16px;
+                    border-radius: 20px;
+                    line-height: 1.5;
+                }
+
+                .stripe {
+                    margin-top: 22px;
+                    gap: 12px;
+                }
+
+                /* section heads */
+                .section-head {
+                    margin-bottom: 22px;
+                }
+
+                .section-note {
+                    margin-top: 14px;
+                    line-height: 1.75;
+                }
+
+                /* cards */
+                .event-card,
+                .info-card,
+                .form-card,
+                .schedule-card {
+                    padding: 22px;
+                    border-radius: 30px;
+                }
+
+                .event-card h3 {
+                    margin-bottom: 18px;
+                }
+
+                .event-card p {
+                    line-height: 1.75;
+                }
+
+                /* form */
+                .tabs {
+                    gap: 12px;
+                    margin-bottom: 22px;
+                }
+
+                .tab {
+                    padding: 16px 14px;
+                    border-radius: 20px;
+                }
+
+                form {
+                    gap: 18px;
+                }
+
+                .dynamic-box {
+                    padding: 18px;
+                    border-radius: 24px;
+                }
+
+                input,
+                select,
+                textarea {
+                    padding: 16px 16px;
+                    border-radius: 18px;
+                }
+
+                .payment-card {
+                    padding: 18px;
+                    border-radius: 24px;
+                }
+
+                .payment-head {
+                    margin-bottom: 20px;
+                }
+
+                .payment-row {
+                    padding: 14px 14px;
+                    border-radius: 18px;
+                }
+
+                .qr-card {
+                    max-width: 230px;
+                    height: 230px;
+                }
+
+                .submit-row {
+                    gap: 14px;
+                    margin-top: 12px;
+                }
+
+                .submit-btn {
+                    min-height: 56px;
+                    padding: 16px 22px;
+                }
+
+                .submit-help {
+                    padding: 14px 14px;
+                }
+
+                /* schedule */
+                .schedule-card {
+                    padding: 22px;
+                }
+
+                .schedule-date {
+                    margin-top: 14px;
+                    margin-bottom: 22px;
+                }
+
+                .timeline-item {
+                    padding: 20px;
+                    border-radius: 24px;
+                }
+
+                .time-pill {
+                    padding: 11px 14px;
+                }
+
+                /* footer */
+                .footer {
+                    padding: 56px 0 38px;
+                }
+
+                .footer-inner {
+                    padding: 26px;
+                    gap: 22px;
+                }
+
+                .footer-links {
+                    margin-top: 20px;
+                    gap: 12px;
+                }
+
+                .footer-chip {
+                    padding: 10px 14px;
+                }
+
+                .footer-logos {
+                    padding: 14px;
+                    gap: 10px;
+                }
+            }
         }
     </style>
 </head>
@@ -1931,6 +2180,7 @@
 
                         <div id="hackathonFields" class="dynamic-box active">
                             <p class="dynamic-title">Online Hackathon Details</p>
+
                             <div class="form-grid">
                                 <div class="field">
                                     <label for="teamName">Team Name *</label>
@@ -1942,10 +2192,10 @@
                                     <label for="teamSize">Team Size *</label>
                                     <select id="teamSize" name="teamSize" required>
                                         <option value="">Select team size</option>
-                                        <option>Solo</option>
-                                        <option>2 Members</option>
-                                        <option>3 Members</option>
-                                        <option>4 Members</option>
+                                        <option value="Solo">Solo</option>
+                                        <option value="2 Members">2 Members</option>
+                                        <option value="3 Members">3 Members</option>
+                                        <option value="4 Members">4 Members</option>
                                     </select>
                                 </div>
 
@@ -1955,8 +2205,56 @@
                                         placeholder="Write member names with phone numbers, if available"></textarea>
                                 </div>
                             </div>
-                        </div>
 
+                            <div class="payment-card">
+                                <div class="payment-head">
+                                    <div>
+                                        <p class="payment-label">Online Hackathon</p>
+                                        <h4>Registration Fee</h4>
+                                    </div>
+                                    <span class="payment-badge">UPI Payment</span>
+                                </div>
+
+                                <div class="payment-body">
+                                    <div class="qr-card">
+                                        <img src="upi-qr.png" alt="UPI QR Code" class="upi-qr" />
+                                    </div>
+
+                                    <div class="payment-details">
+                                        <div class="payment-row">
+                                            <span>Solo</span>
+                                            <b>₹49</b>
+                                        </div>
+
+                                        <div class="payment-row">
+                                            <span>Team of 2 or more</span>
+                                            <b>₹99</b>
+                                        </div>
+
+                                        <div class="payment-row upi-copy-row">
+                                            <span>UPI ID</span>
+
+                                            <div class="upi-pill">
+                                                <b id="hackathonUpiIdText">8133073855@upi</b>
+                                                <button type="button" class="copy-upi-btn"
+                                                    onclick="copyHackathonUpiId()">Copy</button>
+                                            </div>
+                                        </div>
+
+                                        <p class="payment-note">
+                                            Select your team size, pay the correct registration fee, and enter your UPI
+                                            Transaction ID / UTR below.
+                                        </p>
+
+                                        <div class="field">
+                                            <label for="hackathonTransactionId">UPI Transaction ID / UTR *</label>
+                                            <input id="hackathonTransactionId" name="hackathonTransactionId" type="text"
+                                                placeholder="Example: 412345678901" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div id="typingFields" class="dynamic-box">
                             <p class="dynamic-title">Type Writing Competition Details</p>
 
@@ -1998,8 +2296,9 @@
                                             <span>UPI ID</span>
 
                                             <div class="upi-pill">
-                                                <b id="upiIdText">8133073855@upi</b>
-
+                                                <b id="hackathonUpiIdText">8133073855@upi</b>
+                                                <button type="button" class="copy-upi-btn"
+                                                    onclick="copyHackathonUpiId()">Copy</button>
                                             </div>
                                         </div>
 
@@ -2128,7 +2427,7 @@
     </footer>
 
     <script>
-        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzuI7QO6A4esq9POY7ooWcli1gjrmzC5qkI9SzRVZvMbuy8diT0jw7yyHkMe-bvamHqAw/exec";
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzTG0e-H_zultnBI2EGXRXQmUzww7OAwSezIz8pDnsst_LXdhOx3Xz3gCYfwLo-xbQe3g/exec";
 
         const revealElements = document.querySelectorAll(".reveal");
         const revealObserver = new IntersectionObserver((entries) => {
@@ -2154,7 +2453,8 @@
         const form = document.getElementById("registrationForm");
         const submitBtn = document.getElementById("submitBtn");
         const formStatus = document.getElementById("formStatus");
-        const transactionId = document.getElementById("transactionId");
+        const typingTransactionId = document.getElementById("transactionId");
+        const hackathonTransactionId = document.getElementById("hackathonTransactionId");
 
         function setRequiredForEvent(selectedEvent) {
             const isHackathon = selectedEvent === "Online Hackathon";
@@ -2162,7 +2462,9 @@
 
             teamName.required = isHackathon;
             teamSize.required = isHackathon;
-            transactionId.required = isTyping;
+            hackathonTransactionId.required = isHackathon;
+
+            typingTransactionId.required = isTyping;
         }
 
         tabs.forEach((tab) => {
@@ -2196,7 +2498,18 @@
                 }, 1600);
             });
         }
+        function copyHackathonUpiId() {
+            const upiId = document.getElementById("hackathonUpiIdText").innerText;
+            const copyBtn = event.target;
 
+            navigator.clipboard.writeText(upiId).then(() => {
+                copyBtn.textContent = "Copied";
+
+                setTimeout(() => {
+                    copyBtn.textContent = "Copy";
+                }, 1400);
+            });
+        }
         function getFormData() {
             const data = new FormData(form);
             const payload = Object.fromEntries(data.entries());
