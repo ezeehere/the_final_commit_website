@@ -1878,14 +1878,7 @@
                                     </select>
                                 </div>
 
-                                <div class="field">
-                                    <label for="keyboardPreference">Keyboard Preference</label>
-                                    <select id="keyboardPreference" name="keyboardPreference">
-                                        <option value="">Select one</option>
-                                        <option>I will use provided keyboard</option>
-                                        <option>I may bring my own keyboard</option>
-                                    </select>
-                                </div>
+
                             </div>
 
                             <div class="payment-card">
@@ -2042,7 +2035,7 @@
     </footer>
 
     <script>
-        const SCRIPT_URL = "PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE";
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzuI7QO6A4esq9POY7ooWcli1gjrmzC5qkI9SzRVZvMbuy8diT0jw7yyHkMe-bvamHqAw/exec";
 
         const revealElements = document.querySelectorAll(".reveal");
         const revealObserver = new IntersectionObserver((entries) => {
@@ -2125,7 +2118,7 @@
             event.preventDefault();
 
             if (SCRIPT_URL.includes("PASTE_YOUR_GOOGLE_APPS_SCRIPT")) {
-                showStatus("Google Sheets is not connected yet. Replace SCRIPT_URL in the JavaScript with your Apps Script web app URL.", "error");
+                showStatus("Google Sheets is not connected yet. Replace SCRIPT_URL with your Apps Script Web App URL.", "error");
                 return;
             }
 
@@ -2139,21 +2132,21 @@
                 await fetch(SCRIPT_URL, {
                     method: "POST",
                     mode: "no-cors",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
                     body: JSON.stringify(payload)
                 });
 
                 form.reset();
+
                 tabs.forEach((item) => item.classList.remove("active"));
                 tabs[0].classList.add("active");
+
                 eventType.value = "Online Hackathon";
                 hackathonFields.classList.add("active");
                 typingFields.classList.remove("active");
                 setRequiredForEvent("Online Hackathon");
 
                 showStatus("Registration submitted successfully. The organizing team will contact you soon.", "success");
+
             } catch (error) {
                 showStatus("Something went wrong. Please try again or contact the organizing team.", "error");
             } finally {
