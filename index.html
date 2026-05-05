@@ -1315,6 +1315,82 @@
             border: 2px solid rgba(23, 23, 23, 0.12);
             border-radius: 28px;
             background: rgba(255, 255, 255, 0.56);
+
+        }
+
+        .event-rewards {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 22px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .reward-card {
+            position: relative;
+            overflow: hidden;
+            min-height: 92px;
+            padding: 15px;
+            border: 2px solid var(--ink);
+            border-radius: 22px;
+            background: #fffdf8;
+            box-shadow: 5px 5px 0 rgba(23, 23, 23, 0.08);
+        }
+
+        .reward-card::after {
+            content: "";
+            position: absolute;
+            width: 90px;
+            height: 90px;
+            right: -36px;
+            bottom: -38px;
+            border-radius: 50%;
+            background: rgba(251, 188, 5, 0.32);
+        }
+
+        .reward-card.main-reward {
+            background: linear-gradient(135deg, #fff7d6, #ffffff);
+        }
+
+        .reward-card.main-reward::after {
+            background: rgba(66, 133, 244, 0.18);
+        }
+
+        .reward-label {
+            display: block;
+            color: var(--muted);
+            font-family: "Manrope", "Inter", system-ui, sans-serif;
+            font-size: 12px;
+            font-weight: 800;
+            margin-bottom: 7px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .reward-card strong {
+            display: block;
+            color: var(--ink);
+            font-family: "Space Grotesk", "Inter", system-ui, sans-serif;
+            font-size: clamp(22px, 3vw, 34px);
+            line-height: 0.95;
+            letter-spacing: -0.06em;
+            position: relative;
+            z-index: 2;
+        }
+
+        @media (max-width: 520px) {
+            .event-rewards {
+                grid-template-columns: 1fr;
+            }
+
+            .reward-card {
+                min-height: 82px;
+            }
+        }
+
+        .event-card:nth-child(2) .event-rewards {
+            grid-template-columns: 1fr;
         }
 
         /* Tablet */
@@ -1754,6 +1830,17 @@
                     <h3>Online Hackathon</h3>
                     <p>Build a practical solution, work with your team, and submit your project online. Suitable for
                         students interested in coding, development, problem solving, and project building.</p>
+                    <div class="event-rewards">
+                        <div class="reward-card main-reward">
+                            <span class="reward-label">Prize Pool</span>
+                            <strong>₹6K and more exciting prizes</strong>
+                        </div>
+
+                        <div class="reward-card">
+                            <span class="reward-label">Participants</span>
+                            <strong>Certificates</strong>
+                        </div>
+                    </div>
                 </article>
 
                 <article class="event-card reveal reveal-delay-2">
@@ -1761,6 +1848,12 @@
                     <h3>Type Writing Competition</h3>
                     <p>A speed and accuracy based typing challenge for students who want a quick, competitive, and fun
                         skill test.</p>
+                    <div class="event-rewards">
+                        <div class="reward-card main-reward">
+                            <span class="reward-label">Prize</span>
+                            <strong>Revealing Soon</strong>
+                        </div>
+                    </div>
                 </article>
             </div>
         </section>
