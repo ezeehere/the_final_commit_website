@@ -1357,6 +1357,140 @@
             background: rgba(66, 133, 244, 0.18);
         }
 
+        .guidelines-box {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .guideline-card {
+            position: relative;
+            overflow: hidden;
+            border: 2px solid var(--ink);
+            border-radius: 28px;
+            background: rgba(255, 255, 255, 0.76);
+            padding: 22px;
+            box-shadow: 7px 7px 0 rgba(23, 23, 23, 0.09);
+        }
+
+        .guideline-card::after {
+            content: "";
+            position: absolute;
+            width: 110px;
+            height: 110px;
+            right: -42px;
+            bottom: -42px;
+            border-radius: 50%;
+            background: rgba(251, 188, 5, 0.22);
+        }
+
+        .guideline-card span {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            border: 2px solid var(--ink);
+            border-radius: 999px;
+            background: var(--yellow);
+            color: var(--ink);
+            font-family: "Space Grotesk", "Inter", system-ui, sans-serif;
+            font-size: 13px;
+            font-weight: 900;
+            box-shadow: 3px 3px 0 rgba(23, 23, 23, 0.10);
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .guideline-card h3 {
+            font-family: "Space Grotesk", "Inter", system-ui, sans-serif;
+            font-size: 25px;
+            line-height: 1;
+            letter-spacing: -0.05em;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .guideline-card p {
+            color: var(--muted);
+            font-family: "Manrope", "Inter", system-ui, sans-serif;
+            line-height: 1.65;
+            font-weight: 500;
+            position: relative;
+            z-index: 2;
+        }
+
+        .guideline-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 18px;
+            padding: 12px 16px;
+            border: 2px solid var(--ink);
+            border-radius: 999px;
+            background: #ffffff;
+            color: var(--ink);
+            font-family: "Space Grotesk", "Inter", system-ui, sans-serif;
+            font-size: 14px;
+            font-weight: 900;
+            box-shadow: 4px 4px 0 rgba(23, 23, 23, 0.08);
+            position: relative;
+            z-index: 3;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .guideline-btn:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 7px 7px 0 rgba(23, 23, 23, 0.12);
+        }
+
+        .agree-box {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-top: 18px;
+            padding: 15px;
+            border: 2px solid rgba(23, 23, 23, 0.14);
+            border-radius: 20px;
+            background: #fffdf8;
+            color: var(--muted);
+            font-family: "Manrope", "Inter", system-ui, sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 1.5;
+        }
+
+        .agree-box input {
+            width: auto;
+            margin-top: 4px;
+            accent-color: var(--ink);
+        }
+
+        @media (max-width: 940px) {
+            .guidelines-box {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 720px) {
+            .guidelines-box {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .guideline-card {
+                padding: 20px;
+                border-radius: 26px;
+            }
+
+            .guideline-btn {
+                width: 100%;
+                min-height: 52px;
+            }
+        }
+
         .reward-label {
             display: block;
             color: var(--muted);
@@ -1366,6 +1500,52 @@
             margin-bottom: 7px;
             position: relative;
             z-index: 2;
+        }
+
+        .event-deadline {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            margin-top: 18px;
+            padding: 13px 15px;
+            border: 2px solid var(--ink);
+            border-radius: 18px;
+            background: #fffdf8;
+            box-shadow: 5px 5px 0 rgba(23, 23, 23, 0.08);
+            position: relative;
+            z-index: 2;
+        }
+
+        .event-deadline span {
+            color: var(--muted);
+            font-family: "Manrope", "Inter", system-ui, sans-serif;
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .event-deadline strong {
+            color: var(--ink);
+            font-family: "Space Grotesk", "Inter", system-ui, sans-serif;
+            font-size: 16px;
+            font-weight: 900;
+            text-align: right;
+        }
+
+        .event-deadline.urgent {
+            background: #fff1bd;
+        }
+
+        @media (max-width: 520px) {
+            .event-deadline {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 4px;
+            }
+
+            .event-deadline strong {
+                text-align: left;
+            }
         }
 
         .reward-card strong {
@@ -2079,6 +2259,14 @@
                     <h3>Online Hackathon</h3>
                     <p>Build a practical solution, work with your team, and submit your project online. Suitable for
                         students interested in coding, development, problem solving, and project building.</p>
+
+                    <div class="event-deadline urgent">
+                        <span>Registration Deadline</span>
+                        <strong>Thursday, 11:59 PM</strong>
+                    </div>
+
+                    <a class="guideline-btn" href="#hackathon-guidelines">View Hackathon Guidelines</a>
+
                     <div class="event-rewards">
                         <div class="reward-card main-reward">
                             <span class="reward-label">Prize Pool</span>
@@ -2097,6 +2285,11 @@
                     <h3>Type Writing Competition</h3>
                     <p>A speed and accuracy based typing challenge for students who want a quick, competitive, and fun
                         skill test.</p>
+
+                    <div class="event-deadline">
+                        <span>Registration</span>
+                        <strong>On Spot Available</strong>
+                    </div>
                     <div class="event-rewards">
                         <div class="reward-card main-reward">
                             <span class="reward-label">Prize</span>
@@ -2104,6 +2297,71 @@
                         </div>
                     </div>
                 </article>
+            </div>
+        </section>
+
+        <section id="hackathon-guidelines" class="section reveal">
+            <div class="section-head">
+                <div>
+                    <div class="section-kicker">Important</div>
+                    <h2>Hackathon Guidelines</h2>
+                </div>
+                <p class="section-note">
+                    Please read these guidelines carefully before registering for the Online Hackathon.
+                </p>
+            </div>
+
+            <div class="guidelines-box">
+                <div class="guideline-card">
+                    <span>01</span>
+                    <h3>Team Size</h3>
+                    <p>
+                        Participants can register solo or as a team. A team must submit only one project.
+                    </p>
+                </div>
+
+                <div class="guideline-card">
+                    <span>02</span>
+                    <h3>Registration Fee</h3>
+                    <p>
+                        Solo registration fee is ₹49. Team registration fee for two or more members is ₹99.
+                    </p>
+                </div>
+
+                <div class="guideline-card">
+                    <span>03</span>
+                    <h3>Submission</h3>
+                    <p>
+                        Project submission must be done online. Submission link and format will be shared with
+                        registered participants.
+                    </p>
+                </div>
+
+                <div class="guideline-card">
+                    <span>04</span>
+                    <h3>Original Work</h3>
+                    <p>
+                        Projects must be original. Directly copied or plagiarized projects may be disqualified.
+                    </p>
+                </div>
+
+                <div class="guideline-card">
+                    <span>05</span>
+                    <h3>Tech Stack</h3>
+                    <p>
+                        Participants can use any programming language, framework, tool, or platform suitable for their
+                        project.
+                    </p>
+                </div>
+
+                <div class="guideline-card">
+                    <span>06</span>
+                    <h3>Judging</h3>
+                    <p>
+                        Projects will be judged based on idea, implementation, usefulness, presentation, and
+                        completeness.
+                    </p>
+                </div>
             </div>
         </section>
 
@@ -2254,6 +2512,10 @@
                                     </div>
                                 </div>
                             </div>
+                            <label class="agree-box">
+                                <input type="checkbox" id="hackathonAgree" name="hackathonAgree" />
+                                <span>I have read and agree to the Hackathon Guidelines.</span>
+                            </label>
                         </div>
                         <div id="typingFields" class="dynamic-box">
                             <p class="dynamic-title">Type Writing Competition Details</p>
@@ -2315,6 +2577,13 @@
                                     </div>
                                 </div>
                             </div>
+                            <label class="agree-box typing-agree-box">
+                                <input type="checkbox" id="typingAgree" name="typingAgree" />
+                                <span>
+                                    I understand that I should bring my laptop/keyboard if available. If any issue
+                                    occurs after registration, I will contact the organizers.
+                                </span>
+                            </label>
                         </div>
 
 
@@ -2455,6 +2724,8 @@
         const formStatus = document.getElementById("formStatus");
         const typingTransactionId = document.getElementById("transactionId");
         const hackathonTransactionId = document.getElementById("hackathonTransactionId");
+        const hackathonAgree = document.getElementById("hackathonAgree");
+        const typingAgree = document.getElementById("typingAgree");
 
         function setRequiredForEvent(selectedEvent) {
             const isHackathon = selectedEvent === "Online Hackathon";
@@ -2463,8 +2734,10 @@
             teamName.required = isHackathon;
             teamSize.required = isHackathon;
             hackathonTransactionId.required = isHackathon;
+            hackathonAgree.required = isHackathon;
 
             typingTransactionId.required = isTyping;
+            typingAgree.required = isTyping;
         }
 
         tabs.forEach((tab) => {
